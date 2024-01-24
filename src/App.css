@@ -28,6 +28,54 @@
   color: #61dafb;
 }
 
+/* Additional/modified styles */
+.li-relative {
+  position: relative;
+}
+
+.sparkle-container {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+}
+
+.sparkle {
+  position: absolute;
+  animation: sparkle-explosion ease-out forwards;
+  /* Transform will be set inline by JavaScript */
+}
+
+.sparkle-variation {
+  animation-duration: var(--sparkle-duration, 0.5s);
+}
+@keyframes sparkle-explosion {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  animation-name: sparkle-explosion;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.sparkle-variation {
+  animation-duration: var(--sparkle-duration, 0.5s);
+  transform: translate(var(--sparkle-x, 0), var(--sparkle-y, 0)) scale(0);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
